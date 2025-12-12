@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0100000A2C000000000A /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
+		A0100000B2C000000000B /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
+		A0100000C2C000000000C /* WEScaffold.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000D2C000000000D /* WEScaffold.xib */; };
+		A0100000E2C000000000E /* WEScaffoldWE.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000F2C000000000F /* WEScaffoldWE.xib */; };
 		A01000012C0000000001 /* WEScaffoldGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100012C0000000001 /* WEScaffoldGlobals.mm */; };
 		A01000022C0000000002 /* WEScaffoldGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100012C0000000001 /* WEScaffoldGlobals.mm */; };
 		A01000032C0000000003 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100032C0000000003 /* main.mm */; };
@@ -16,10 +20,6 @@
 		A01000072C0000000007 /* WEScaffoldWindowDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */; };
 		A01000082C0000000008 /* WEScaffoldDropButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100092C0000000009 /* WEScaffoldDropButton.mm */; };
 		A01000092C0000000009 /* WEScaffoldDropButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100092C0000000009 /* WEScaffoldDropButton.mm */; };
-		A0100000A2C000000000A /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
-		A0100000B2C000000000B /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
-		A0100000C2C000000000C /* WEScaffold.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000D2C000000000D /* WEScaffold.xib */; };
-		A0100000E2C000000000E /* WEScaffoldWE.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000F2C000000000F /* WEScaffoldWE.xib */; };
 		A01000102C0000000010 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100112C0000000011 /* Cocoa.framework */; };
 		A01000122C0000000012 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100112C0000000011 /* Cocoa.framework */; };
 		A01000132C0000000013 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100142C0000000014 /* QuartzCore.framework */; };
@@ -55,7 +55,15 @@
 
 /* Begin PBXFileReference section */
 		A01100002C0000000000 /* WEScaffoldGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldGlobals.h; path = ../src/WEScaffoldGlobals.h; sourceTree = "<group>"; };
+		A0110000A2C000000000A /* WEScaffoldDragBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldDragBox.h; path = ../src/WEScaffoldDragBox.h; sourceTree = "<group>"; };
+		A0110000B2C000000000B /* WEScaffoldDragBox.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldDragBox.mm; path = ../src/WEScaffoldDragBox.mm; sourceTree = "<group>"; };
+		A0110000D2C000000000D /* WEScaffold.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffold.xib; path = ../rsrc/Base.lproj/WEScaffold.xib; sourceTree = "<group>"; };
+		A0110000F2C000000000F /* WEScaffoldWE.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffoldWE.xib; path = ../rsrc/Base.lproj/WEScaffoldWE.xib; sourceTree = "<group>"; };
 		A01100012C0000000001 /* WEScaffoldGlobals.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldGlobals.mm; path = ../src/WEScaffoldGlobals.mm; sourceTree = "<group>"; };
+		A0110001C2C000000001C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		A0110001D2C000000001D /* WEScaffold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffold.entitlements; path = ../WEScaffold.entitlements; sourceTree = "<group>"; };
+		A0110001E2C000000001E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../WEScaffoldWE/Info.plist; sourceTree = "<group>"; };
+		A0110001F2C000000001F /* WEScaffoldWE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffoldWE.entitlements; path = ../WEScaffoldWE.entitlements; sourceTree = "<group>"; };
 		A01100032C0000000003 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = ../src/main.mm; sourceTree = "<group>"; };
 		A01100042C0000000004 /* WEScaffoldController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldController.h; path = ../src/WEScaffoldController.h; sourceTree = "<group>"; };
 		A01100052C0000000005 /* WEScaffoldController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldController.mm; path = ../src/WEScaffoldController.mm; sourceTree = "<group>"; };
@@ -63,17 +71,9 @@
 		A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldWindowDelegate.mm; path = ../src/WEScaffoldWindowDelegate.mm; sourceTree = "<group>"; };
 		A01100082C0000000008 /* WEScaffoldDropButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldDropButton.h; path = ../src/WEScaffoldDropButton.h; sourceTree = "<group>"; };
 		A01100092C0000000009 /* WEScaffoldDropButton.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldDropButton.mm; path = ../src/WEScaffoldDropButton.mm; sourceTree = "<group>"; };
-		A0110000A2C000000000A /* WEScaffoldDragBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldDragBox.h; path = ../src/WEScaffoldDragBox.h; sourceTree = "<group>"; };
-		A0110000B2C000000000B /* WEScaffoldDragBox.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldDragBox.mm; path = ../src/WEScaffoldDragBox.mm; sourceTree = "<group>"; };
-		A0110000D2C000000000D /* WEScaffold.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffold.xib; path = ../rsrc/Base.lproj/WEScaffold.xib; sourceTree = "<group>"; };
-		A0110000F2C000000000F /* WEScaffoldWE.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffoldWE.xib; path = ../rsrc/Base.lproj/WEScaffoldWE.xib; sourceTree = "<group>"; };
 		A01100112C0000000011 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		A01100142C0000000014 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A01100172C0000000017 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
-		A0110001C2C000000001C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		A0110001D2C000000001D /* WEScaffold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffold.entitlements; path = ../WEScaffold.entitlements; sourceTree = "<group>"; };
-		A0110001E2C000000001E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../WEScaffoldWE/Info.plist; sourceTree = "<group>"; };
-		A0110001F2C000000001F /* WEScaffoldWE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffoldWE.entitlements; path = ../WEScaffoldWE.entitlements; sourceTree = "<group>"; };
 		A01200012C0000000100 /* WEScaffoldWE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WEScaffoldWE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01200032C0000000102 /* WEScaffold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEScaffold.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -532,6 +532,8 @@
 					Cocoa,
 					"-framework",
 					QuartzCore,
+					"\"-u _ProExtensionMain\"",
+					"\"-weak_framework ProExtension\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffoldWE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +578,8 @@
 					Cocoa,
 					"-framework",
 					QuartzCore,
+					"\"-u _ProExtensionMain\"",
+					"\"-weak_framework ProExtension\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffoldWE;
 				PRODUCT_NAME = "$(TARGET_NAME)";
