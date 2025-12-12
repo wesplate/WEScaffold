@@ -1,0 +1,150 @@
+# WE Scaffold - Git Ignore File
+# For Xcode/macOS Workflow Extension Development
+
+# ============================================================================
+# Xcode
+# ============================================================================
+
+# Build products
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcscmblueprint
+
+# CocoaPods (if used in future)
+Pods/
+
+# Carthage (if used in future)
+Carthage/Build/
+
+# Swift Package Manager (if used in future)
+.build/
+Package.resolved
+
+# ============================================================================
+# macOS
+# ============================================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ============================================================================
+# Application Build Products
+# ============================================================================
+
+# Built .app bundles (these will be regenerated)
+*.app
+*.appex
+
+# Intermediate object files
+*.o
+*.lo
+*.obj
+
+# Archives
+*.a
+*.lib
+
+# Debug symbols
+*.dSYM/
+
+# ============================================================================
+# Logs
+# ============================================================================
+
+# Runtime log files (user-generated during testing)
+*.log
+
+# But keep the empty logs directory structure if you create it
+!logs/.gitkeep
+
+# ============================================================================
+# IDE and Editor Files
+# ============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ============================================================================
+# Temporary and Cache Files
+# ============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Backup files
+*.bak
+*.backup
+*~.nib
+
+# ============================================================================
+# Project-Specific
+# ============================================================================
+
+# Keep source code, documentation, and configuration
+# (these are explicit keeps, nothing to ignore here)
+
+# XIB files will be created by user in Xcode - NOT ignored
+# Info.plist files are essential - NOT ignored
+# Entitlements are essential - NOT ignored
+
+# ============================================================================
+# Notes
+# ============================================================================
+# This .gitignore is configured for the WE Scaffold template project.
+# When copying this scaffold for a new project, review and adjust as needed.
+# Key principle: Ignore build artifacts and user-specific files,
+# but keep all source code, configuration, and documentation.
