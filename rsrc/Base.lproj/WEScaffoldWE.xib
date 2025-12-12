@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WEScaffoldController">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="btX-lV-nVo"/>
+                <outlet property="dropButton" destination="dropZoneButton" id="drop-outlet-conn"/>
+                <outlet property="dragBox" destination="dragZoneBox" id="drag-outlet-conn"/>
+                <outlet property="statusLabel" destination="statusTextField" id="status-outlet-conn"/>
+                <outlet property="timestampLabel" destination="timestampTextField" id="timestamp-outlet-conn"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <!-- Drop Zone Button -->
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dropZoneButton" customClass="WEScaffoldDropButton">
+                    <rect key="frame" x="10" y="310" width="280" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="dropWidth"/>
+                        <constraint firstAttribute="height" constant="120" id="dropHeight"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" title="Drop FCPXML Here" bezelStyle="shadowlessSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dropButtonCell">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system" size="14"/>
+                    </buttonCell>
+                    <connections>
+                        <outlet property="controller" destination="-2" id="drop-controller-conn"/>
+                    </connections>
+                </button>
+
+                <!-- Status Label -->
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="statusTextField">
+                    <rect key="frame" x="18" y="278" width="264" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Status: Ready" id="statusCell">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+
+                <!-- Timestamp Label -->
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="timestampTextField">
+                    <rect key="frame" x="18" y="253" width="264" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="" id="timestampCell">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+
+                <!-- Separator Line -->
+                <box boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="separatorBox">
+                    <rect key="frame" x="10" y="225" width="280" height="5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="sepWidth"/>
+                    </constraints>
+                </box>
+
+                <!-- Drag Zone Box -->
+                <box verticalHuggingPriority="750" boxType="custom" borderType="line" title="Drag to FCP" translatesAutoresizingMaskIntoConstraints="NO" id="dragZoneBox" customClass="WEScaffoldDragBox">
+                    <rect key="frame" x="10" y="20" width="280" height="190"/>
+                    <view key="contentView" id="dragContentView">
+                        <rect key="frame" x="1" y="1" width="278" height="173"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <!-- Text inside drag box -->
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dragBoxLabel">
+                                <rect key="frame" x="39" y="70" width="200" height="32"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drop XML above first" id="dragBoxLabelCell">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="dragBoxLabel" firstAttribute="centerX" secondItem="dragContentView" secondAttribute="centerX" id="dragLabelCenterX"/>
+                            <constraint firstItem="dragBoxLabel" firstAttribute="centerY" secondItem="dragContentView" secondAttribute="centerY" id="dragLabelCenterY"/>
+                        </constraints>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="280" id="dragWidth"/>
+                        <constraint firstAttribute="height" constant="190" id="dragHeight"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="controller" destination="-2" id="drag-controller-conn"/>
+                    </connections>
+                </box>
+            </subviews>
+            <constraints>
+                <!-- Drop Zone Constraints -->
+                <constraint firstItem="dropZoneButton" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="dropTop"/>
+                <constraint firstItem="dropZoneButton" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="dropCenterX"/>
+
+                <!-- Status Label Constraints -->
+                <constraint firstItem="statusTextField" firstAttribute="top" secondItem="dropZoneButton" secondAttribute="bottom" constant="15" id="statusTop"/>
+                <constraint firstItem="statusTextField" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="statusCenterX"/>
+
+                <!-- Timestamp Label Constraints -->
+                <constraint firstItem="timestampTextField" firstAttribute="top" secondItem="statusTextField" secondAttribute="bottom" constant="8" id="timestampTop"/>
+                <constraint firstItem="timestampTextField" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="timestampCenterX"/>
+
+                <!-- Separator Constraints -->
+                <constraint firstItem="separatorBox" firstAttribute="top" secondItem="timestampTextField" secondAttribute="bottom" constant="23" id="separatorTop"/>
+                <constraint firstItem="separatorBox" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="separatorCenterX"/>
+
+                <!-- Drag Zone Constraints -->
+                <constraint firstItem="dragZoneBox" firstAttribute="top" secondItem="separatorBox" secondAttribute="bottom" constant="15" id="dragTop"/>
+                <constraint firstItem="dragZoneBox" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="dragCenterX"/>
+                <constraint firstAttribute="bottom" secondItem="dragZoneBox" secondAttribute="bottom" constant="20" id="dragBottom"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="154"/>
+        </customView>
+    </objects>
+</document>

@@ -31,6 +31,11 @@
 #include <CoreFoundation/CoreFoundation.h>
 #include <stdio.h>
 
+// Need Foundation for NSLog in logging macros
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#endif
+
 /******************************************************************************
  * WEScaffoldGlobals Structure
  *

@@ -301,8 +301,8 @@
     DRAG_LOG("  └─ CFDataRef address: %p", xGlobals.xmlData);
 
     // Cast CFDataRef to NSData* (they're toll-free bridged)
-    // EDUCATIONAL: CFDataRef and NSData* are interchangeable via simple cast
-    return (NSData*)xGlobals.xmlData;
+    // EDUCATIONAL: CFDataRef and NSData* are interchangeable via __bridge cast
+    return (__bridge NSData*)xGlobals.xmlData;
 }
 
 #pragma mark - UI Updates
@@ -329,7 +329,7 @@
 - (void)updateTimestamp
 {
     if (timestampLabel && xGlobals.receivedTimestamp) {
-        NSString* ts = (NSString*)xGlobals.receivedTimestamp;
+        NSString* ts = (__bridge NSString*)xGlobals.receivedTimestamp;
         [timestampLabel setStringValue:[NSString stringWithFormat:@"Received: %@", ts]];
     }
 }

@@ -94,7 +94,7 @@
     // EDUCATIONAL: We create a simple image to show while dragging.
     // For the scaffold, we use a small icon. Real WEs might show a thumbnail.
     //
-    NSImage* dragImage = [NSImage imageNamed:NSImageNameDocument];
+    NSImage* dragImage = [NSImage imageNamed:@"NSDocument"];
     if (!dragImage) {
         // Fallback: create a simple colored image
         dragImage = [[NSImage alloc] initWithSize:NSMakeSize(64, 64)];

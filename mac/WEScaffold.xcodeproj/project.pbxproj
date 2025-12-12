@@ -1,0 +1,620 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A01000012C0000000001 /* WEScaffoldGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100012C0000000001 /* WEScaffoldGlobals.mm */; };
+		A01000022C0000000002 /* WEScaffoldGlobals.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100012C0000000001 /* WEScaffoldGlobals.mm */; };
+		A01000032C0000000003 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100032C0000000003 /* main.mm */; };
+		A01000042C0000000004 /* WEScaffoldController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100052C0000000005 /* WEScaffoldController.mm */; };
+		A01000052C0000000005 /* WEScaffoldController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100052C0000000005 /* WEScaffoldController.mm */; };
+		A01000062C0000000006 /* WEScaffoldWindowDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */; };
+		A01000072C0000000007 /* WEScaffoldWindowDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */; };
+		A01000082C0000000008 /* WEScaffoldDropButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100092C0000000009 /* WEScaffoldDropButton.mm */; };
+		A01000092C0000000009 /* WEScaffoldDropButton.mm in Sources */ = {isa = PBXBuildFile; fileRef = A01100092C0000000009 /* WEScaffoldDropButton.mm */; };
+		A0100000A2C000000000A /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
+		A0100000B2C000000000B /* WEScaffoldDragBox.mm in Sources */ = {isa = PBXBuildFile; fileRef = A0110000B2C000000000B /* WEScaffoldDragBox.mm */; };
+		A0100000C2C000000000C /* WEScaffold.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000D2C000000000D /* WEScaffold.xib */; };
+		A0100000E2C000000000E /* WEScaffoldWE.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0110000F2C000000000F /* WEScaffoldWE.xib */; };
+		A01000102C0000000010 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100112C0000000011 /* Cocoa.framework */; };
+		A01000122C0000000012 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100112C0000000011 /* Cocoa.framework */; };
+		A01000132C0000000013 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100142C0000000014 /* QuartzCore.framework */; };
+		A01000152C0000000015 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100142C0000000014 /* QuartzCore.framework */; };
+		A01000162C0000000016 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100172C0000000017 /* libxml2.tbd */; };
+		A01000182C0000000018 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A01100172C0000000017 /* libxml2.tbd */; };
+		A01000192C0000000019 /* WEScaffoldWE.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A01200012C0000000100 /* WEScaffoldWE.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0100001D2C000000001D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A01300012C0000000200 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A01200022C0000000101;
+			remoteInfo = WEScaffoldWE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0100001B2C000000001B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A01000192C0000000019 /* WEScaffoldWE.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A01100002C0000000000 /* WEScaffoldGlobals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldGlobals.h; path = ../src/WEScaffoldGlobals.h; sourceTree = "<group>"; };
+		A01100012C0000000001 /* WEScaffoldGlobals.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldGlobals.mm; path = ../src/WEScaffoldGlobals.mm; sourceTree = "<group>"; };
+		A01100032C0000000003 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = ../src/main.mm; sourceTree = "<group>"; };
+		A01100042C0000000004 /* WEScaffoldController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldController.h; path = ../src/WEScaffoldController.h; sourceTree = "<group>"; };
+		A01100052C0000000005 /* WEScaffoldController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldController.mm; path = ../src/WEScaffoldController.mm; sourceTree = "<group>"; };
+		A01100062C0000000006 /* WEScaffoldWindowDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldWindowDelegate.h; path = ../src/WEScaffoldWindowDelegate.h; sourceTree = "<group>"; };
+		A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldWindowDelegate.mm; path = ../src/WEScaffoldWindowDelegate.mm; sourceTree = "<group>"; };
+		A01100082C0000000008 /* WEScaffoldDropButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldDropButton.h; path = ../src/WEScaffoldDropButton.h; sourceTree = "<group>"; };
+		A01100092C0000000009 /* WEScaffoldDropButton.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldDropButton.mm; path = ../src/WEScaffoldDropButton.mm; sourceTree = "<group>"; };
+		A0110000A2C000000000A /* WEScaffoldDragBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEScaffoldDragBox.h; path = ../src/WEScaffoldDragBox.h; sourceTree = "<group>"; };
+		A0110000B2C000000000B /* WEScaffoldDragBox.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = WEScaffoldDragBox.mm; path = ../src/WEScaffoldDragBox.mm; sourceTree = "<group>"; };
+		A0110000D2C000000000D /* WEScaffold.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffold.xib; path = ../rsrc/Base.lproj/WEScaffold.xib; sourceTree = "<group>"; };
+		A0110000F2C000000000F /* WEScaffoldWE.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = WEScaffoldWE.xib; path = ../rsrc/Base.lproj/WEScaffoldWE.xib; sourceTree = "<group>"; };
+		A01100112C0000000011 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		A01100142C0000000014 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A01100172C0000000017 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		A0110001C2C000000001C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		A0110001D2C000000001D /* WEScaffold.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffold.entitlements; path = ../WEScaffold.entitlements; sourceTree = "<group>"; };
+		A0110001E2C000000001E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../WEScaffoldWE/Info.plist; sourceTree = "<group>"; };
+		A0110001F2C000000001F /* WEScaffoldWE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WEScaffoldWE.entitlements; path = ../WEScaffoldWE.entitlements; sourceTree = "<group>"; };
+		A01200012C0000000100 /* WEScaffoldWE.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WEScaffoldWE.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A01200032C0000000102 /* WEScaffold.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WEScaffold.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A01300022C0000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01000102C0000000010 /* Cocoa.framework in Frameworks */,
+				A01000132C0000000013 /* QuartzCore.framework in Frameworks */,
+				A01000162C0000000016 /* libxml2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01300032C0000000202 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01000122C0000000012 /* Cocoa.framework in Frameworks */,
+				A01000152C0000000015 /* QuartzCore.framework in Frameworks */,
+				A01000182C0000000018 /* libxml2.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A01400012C0000000300 = {
+			isa = PBXGroup;
+			children = (
+				A01400022C0000000301 /* WEScaffold */,
+				A01400032C0000000302 /* WEScaffoldWE */,
+				A01400042C0000000303 /* Frameworks */,
+				A01400052C0000000304 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A01400022C0000000301 /* WEScaffold */ = {
+			isa = PBXGroup;
+			children = (
+				A01100002C0000000000 /* WEScaffoldGlobals.h */,
+				A01100012C0000000001 /* WEScaffoldGlobals.mm */,
+				A01100032C0000000003 /* main.mm */,
+				A01100042C0000000004 /* WEScaffoldController.h */,
+				A01100052C0000000005 /* WEScaffoldController.mm */,
+				A01100062C0000000006 /* WEScaffoldWindowDelegate.h */,
+				A01100072C0000000007 /* WEScaffoldWindowDelegate.mm */,
+				A01100082C0000000008 /* WEScaffoldDropButton.h */,
+				A01100092C0000000009 /* WEScaffoldDropButton.mm */,
+				A0110000A2C000000000A /* WEScaffoldDragBox.h */,
+				A0110000B2C000000000B /* WEScaffoldDragBox.mm */,
+				A0110000D2C000000000D /* WEScaffold.xib */,
+				A0110001C2C000000001C /* Info.plist */,
+				A0110001D2C000000001D /* WEScaffold.entitlements */,
+			);
+			name = WEScaffold;
+			sourceTree = "<group>";
+		};
+		A01400032C0000000302 /* WEScaffoldWE */ = {
+			isa = PBXGroup;
+			children = (
+				A0110000F2C000000000F /* WEScaffoldWE.xib */,
+				A0110001E2C000000001E /* Info.plist */,
+				A0110001F2C000000001F /* WEScaffoldWE.entitlements */,
+			);
+			name = WEScaffoldWE;
+			sourceTree = "<group>";
+		};
+		A01400042C0000000303 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A01100112C0000000011 /* Cocoa.framework */,
+				A01100142C0000000014 /* QuartzCore.framework */,
+				A01100172C0000000017 /* libxml2.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A01400052C0000000304 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A01200032C0000000102 /* WEScaffold.app */,
+				A01200012C0000000100 /* WEScaffoldWE.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A01200022C0000000101 /* WEScaffoldWE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A01500022C0000000401 /* Build configuration list for PBXNativeTarget "WEScaffoldWE" */;
+			buildPhases = (
+				A01300042C0000000203 /* Sources */,
+				A01300032C0000000202 /* Frameworks */,
+				A01300052C0000000204 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WEScaffoldWE;
+			productName = WEScaffoldWE;
+			productReference = A01200012C0000000100 /* WEScaffoldWE.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		A01200042C0000000103 /* WEScaffold */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A01500012C0000000400 /* Build configuration list for PBXNativeTarget "WEScaffold" */;
+			buildPhases = (
+				A01300062C0000000205 /* Sources */,
+				A01300022C0000000201 /* Frameworks */,
+				A01300072C0000000206 /* Resources */,
+				A0100001B2C000000001B /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0100001A2C000000001A /* PBXTargetDependency */,
+			);
+			name = WEScaffold;
+			productName = WEScaffold;
+			productReference = A01200032C0000000102 /* WEScaffold.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A01300012C0000000200 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					A01200022C0000000101 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					A01200042C0000000103 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = A01500032C0000000402 /* Build configuration list for PBXProject "WEScaffold" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A01400012C0000000300;
+			productRefGroup = A01400052C0000000304 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A01200042C0000000103 /* WEScaffold */,
+				A01200022C0000000101 /* WEScaffoldWE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A01300052C0000000204 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0100000E2C000000000E /* WEScaffoldWE.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01300072C0000000206 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0100000C2C000000000C /* WEScaffold.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A01300042C0000000203 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01000022C0000000002 /* WEScaffoldGlobals.mm in Sources */,
+				A01000052C0000000005 /* WEScaffoldController.mm in Sources */,
+				A01000072C0000000007 /* WEScaffoldWindowDelegate.mm in Sources */,
+				A01000092C0000000009 /* WEScaffoldDropButton.mm in Sources */,
+				A0100000B2C000000000B /* WEScaffoldDragBox.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A01300062C0000000205 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A01000012C0000000001 /* WEScaffoldGlobals.mm in Sources */,
+				A01000032C0000000003 /* main.mm in Sources */,
+				A01000042C0000000004 /* WEScaffoldController.mm in Sources */,
+				A01000062C0000000006 /* WEScaffoldWindowDelegate.mm in Sources */,
+				A01000082C0000000008 /* WEScaffoldDropButton.mm in Sources */,
+				A0100000A2C000000000A /* WEScaffoldDragBox.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0100001A2C000000001A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A01200022C0000000101 /* WEScaffoldWE */;
+			targetProxy = A0100001D2C000000001D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A01600012C0000000500 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A01600022C0000000501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A01600032C0000000502 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WEScaffold.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/PrivateFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"AD=$(HOME)/dev/AutomaticDuckII",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/dev/AutomaticDuckII/share",
+					"$(HOME)/dev/AutomaticDuckII/share/xml",
+					"$(HOME)/dev/AutomaticDuckII/share/files",
+					"$(HOME)/dev/AutomaticDuckII/share/str",
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Automatic Duck, Inc. All rights reserved.";
+				INFOPLIST_KEY_NSMainNibFile = WEScaffold;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuartzCore,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		A01600042C0000000503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WEScaffold.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/PrivateFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = "AD=$(HOME)/dev/AutomaticDuckII";
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/dev/AutomaticDuckII/share",
+					"$(HOME)/dev/AutomaticDuckII/share/xml",
+					"$(HOME)/dev/AutomaticDuckII/share/files",
+					"$(HOME)/dev/AutomaticDuckII/share/str",
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Automatic Duck, Inc. All rights reserved.";
+				INFOPLIST_KEY_NSMainNibFile = WEScaffold;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuartzCore,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffold;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+		A01600052C0000000504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WEScaffoldWE.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/PrivateFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"WORKFLOW_EXTENSION=1",
+					"AD=$(HOME)/dev/AutomaticDuckII",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/dev/AutomaticDuckII/share",
+					"$(HOME)/dev/AutomaticDuckII/share/xml",
+					"$(HOME)/dev/AutomaticDuckII/share/files",
+					"$(HOME)/dev/AutomaticDuckII/share/str",
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = WEScaffoldWE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "WE Scaffold";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Automatic Duck, Inc. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuartzCore,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffoldWE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		A01600062C0000000505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WEScaffoldWE.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/System/Library/PrivateFrameworks,
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"WORKFLOW_EXTENSION=1",
+					"AD=$(HOME)/dev/AutomaticDuckII",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(HOME)/dev/AutomaticDuckII/share",
+					"$(HOME)/dev/AutomaticDuckII/share/xml",
+					"$(HOME)/dev/AutomaticDuckII/share/files",
+					"$(HOME)/dev/AutomaticDuckII/share/str",
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = WEScaffoldWE/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "WE Scaffold";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Automatic Duck, Inc. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					QuartzCore,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.automaticduck.WEScaffoldWE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A01500012C0000000400 /* Build configuration list for PBXNativeTarget "WEScaffold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01600032C0000000502 /* Debug */,
+				A01600042C0000000503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A01500022C0000000401 /* Build configuration list for PBXNativeTarget "WEScaffoldWE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01600052C0000000504 /* Debug */,
+				A01600062C0000000505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A01500032C0000000402 /* Build configuration list for PBXProject "WEScaffold" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A01600012C0000000500 /* Debug */,
+				A01600022C0000000501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A01300012C0000000200 /* Project object */;
+}
