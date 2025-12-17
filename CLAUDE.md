@@ -14,39 +14,44 @@ The scaffold is a pass-through (XML in = XML out, unchanged). Developers copy th
 
 ## Project Status
 
-**Source Code:** 100% complete - all `.h`, `.mm`, `.cpp` files ready
-**Xcode Project:** Not created - requires manual setup in Xcode GUI
-**Build Status:** Buildable once Xcode project is configured per `XCODE_SETUP_GUIDE.md`
+**Status:** 100% Complete and Buildable
+- **Source Code:** Complete - all `.h`, `.mm` files ready
+- **Xcode Project:** `mac/WEScaffold.xcodeproj` (dual targets configured)
+- **XIB Files:** Complete - `rsrc/Base.lproj/*.xib`
+- **Build Scripts:** Ready in `scripts/`
 
 ## Building the Project
 
 ### Prerequisites
 
 - Xcode 14+ with Command Line Tools
-- Parent AutomaticDuckII repository at `~/AutomaticDuckII`
-- Automatic Duck shared libraries built (`duckShareARMLib`)
+- macOS 14.0+ SDK
+- Parent AutomaticDuckII repository at `~/AutomaticDuckII` (for shared headers)
 
-### Current Build Process
-
-**IMPORTANT:** There is no `.xcodeproj` file yet. The Xcode project must be created manually following the comprehensive guide:
+### Quick Build
 
 ```bash
-# Read the setup guide
-open XCODE_SETUP_GUIDE.md
+# Using the build script (recommended)
+./scripts/build.sh          # Build Debug
+./scripts/build.sh Release  # Build Release
+
+# Or using xcodebuild directly
+xcodebuild -project mac/WEScaffold.xcodeproj -scheme WEScaffold -configuration Debug build
+
+# Or open in Xcode GUI
+open mac/WEScaffold.xcodeproj
 ```
 
-The guide walks through:
-1. Creating the Xcode project with dual targets (app + extension)
-2. Configuring build settings and linking frameworks
-3. Adding source files to appropriate targets
-4. Creating XIB files in Interface Builder
-5. Building and testing in Final Cut Pro
+### Build Validation
 
-**Estimated setup time:** 1.5-2 hours for first-time setup
+```bash
+# Validate project configuration before building
+./scripts/validate_build.sh
+```
 
 ### Dependencies on Parent Repository
 
-WEScaffold requires these components from `~/AutomaticDuckII`:
+WEScaffold requires header files from `~/AutomaticDuckII`:
 
 **Header Search Paths:**
 ```
@@ -67,7 +72,7 @@ $(HOME)/AutomaticDuckII/share/str
 
 **WEScaffold (macOS App):**
 - Product type: `com.apple.product-type.application`
-- Entry point: `main.cpp` with `NSApplicationMain()`
+- Entry point: `main.mm` with `NSApplicationMain()`
 - Preprocessor: `AD=$(HOME)/AutomaticDuckII`
 - XIB: `WEScaffold.xib`
 
@@ -76,16 +81,25 @@ $(HOME)/AutomaticDuckII/share/str
 - Entry point: `ProExtensionMain` (no `main()` function)
 - Preprocessor: `WORKFLOW_EXTENSION=1`, `AD=$(HOME)/AutomaticDuckII`
 - XIB: `WEScaffoldWE.xib`
-- Additional linker flags: `-lProExtension -u _ProExtensionMain`
+- Additional linker flags: `-weak_framework ProExtension -u _ProExtensionMain`
 - Framework search path: `/System/Library/PrivateFrameworks`
-- **CRITICAL:** `main.cpp` must be excluded from this target
+- **CRITICAL:** `main.mm` must be excluded from this target
+
+### ProExtension Framework Note
+
+The ProExtension framework is Apple's private framework and may not be available on systems without Final Cut Pro installed. The build is configured with `-weak_framework` to allow building on development systems. When deploying to a system with FCP:
+1. Ensure ProExtension framework linking is active
+2. Rebuild on the target machine if needed
 
 ### Testing
 
 **Standalone App:**
 ```bash
-# After Xcode project is built
+# After building
 open ~/Library/Developer/Xcode/DerivedData/WEScaffold-*/Build/Products/Debug/WEScaffold.app
+
+# Or use the test script
+./scripts/test_extension.sh
 ```
 
 **Workflow Extension:**
@@ -104,6 +118,43 @@ open /System/Applications/Utilities/Console.app
 
 # File logs
 tail -f ~/Library/Logs/WEScaffold/wescaffold.log
+```
+
+## Directory Structure
+
+```
+WEScaffold/
+├── mac/                              # Xcode project & config
+│   ├── WEScaffold.xcodeproj/         # Xcode project (2 targets)
+│   ├── Info.plist                    # App metadata
+│   ├── WEScaffold.entitlements       # App sandbox settings
+│   ├── WEScaffoldWE.entitlements     # Extension sandbox settings
+│   └── WEScaffoldWE/
+│       └── Info.plist                # Extension metadata (ProExtension config)
+├── src/                              # Source code
+│   ├── main.mm                       # App entry point (app target only)
+│   ├── WEScaffoldGlobals.h/mm        # Global state + logging macros
+│   ├── WEScaffoldController.h/mm     # Main NSViewController
+│   ├── WEScaffoldDropButton.h/mm     # Drop zone (NSDraggingDestination)
+│   ├── WEScaffoldDragBox.h/mm        # Drag source (NSDraggingSource)
+│   └── WEScaffoldWindowDelegate.h/mm # Window resize handling
+├── rsrc/                             # Resources
+│   └── Base.lproj/
+│       ├── WEScaffold.xib            # Standalone app UI
+│       └── WEScaffoldWE.xib          # Workflow Extension UI
+├── scripts/                          # Build & test helpers
+│   ├── build.sh                      # Automated build script
+│   ├── validate_build.sh             # Pre-build validation
+│   └── test_extension.sh             # Testing helper for FCP
+├── doc/                              # Documentation
+│   ├── README.md                     # Quick start guide
+│   ├── ARCHITECTURE.md               # Technical deep dive
+│   └── LOGGING.md                    # Log interpretation guide
+├── CLAUDE.md                         # This file
+├── XCODE_SETUP_GUIDE.md              # Detailed setup reference
+├── BUILD_COMPLETE.md                 # Build completion notes
+├── COMPLETION_SUMMARY.md             # Project summary
+└── IMPLEMENTATION_STATUS.md          # Implementation checklist
 ```
 
 ## Architecture
@@ -177,10 +228,10 @@ Uses `CFDataRef` instead of `NSData*` for educational purposes (explicit retain/
 
 ```cpp
 // Store (retain)
-xGlobals.xmlData = (CFDataRef)CFRetain((CFDataRef)xmlData);
+xGlobals.xmlData = (CFDataRef)CFRetain((__bridge CFDataRef)xmlData);
 
 // Retrieve (toll-free bridging)
-NSData* data = (NSData*)xGlobals.xmlData;
+NSData* data = (__bridge NSData*)xGlobals.xmlData;
 
 // Release (cleanup)
 if (xGlobals.xmlData) {
@@ -220,8 +271,8 @@ Extension visible to user
 
 | File | Purpose | Protocols |
 |------|---------|-----------|
-| `WEScaffoldGlobals.h/cpp` | Global state, logging macros, initialize/cleanup | - |
-| `main.cpp` | App entry point (excluded from extension target) | - |
+| `WEScaffoldGlobals.h/mm` | Global state, logging macros, initialize/cleanup | - |
+| `main.mm` | App entry point (excluded from extension target) | - |
 | `WEScaffoldController.mm` | Main view controller, coordinator between drop/drag | `NSViewController` |
 | `WEScaffoldDropButton.mm` | Receives FCPXML from FCP | `NSDraggingDestination` |
 | `WEScaffoldDragBox.mm` | Sends FCPXML back to FCP | `NSDraggingSource`, `NSPasteboardItemDataProvider` |
@@ -296,7 +347,7 @@ ERROR_LOG("Failed to parse XML");
 1. NSLog → Xcode console, Console.app, FCP console
 2. File → `~/Library/Logs/WEScaffold/wescaffold.log`
 
-See `LOGGING.md` for complete log interpretation guide.
+See `doc/LOGGING.md` for complete log interpretation guide.
 
 ## Using as a Template
 
@@ -305,7 +356,7 @@ See `LOGGING.md` for complete log interpretation guide.
 **Current (pass-through):**
 ```objc
 - (void)receiveXMLData:(NSData*)xmlData {
-    xGlobals.xmlData = (CFDataRef)CFRetain((CFDataRef)xmlData);
+    xGlobals.xmlData = (CFDataRef)CFRetain((__bridge CFDataRef)xmlData);
 }
 ```
 
@@ -313,24 +364,24 @@ See `LOGGING.md` for complete log interpretation guide.
 ```objc
 - (void)receiveXMLData:(NSData*)xmlData {
     // Store original
-    xGlobals.inputXML = (CFDataRef)CFRetain((CFDataRef)xmlData);
+    xGlobals.inputXML = (CFDataRef)CFRetain((__bridge CFDataRef)xmlData);
 
     // Parse and process
     DuckXmlDoc doc;
-    if (doc.Parse((const char*)CFDataGetBytePtr(xmlData), [xmlData length])) {
+    if (doc.Parse((const char*)CFDataGetBytePtr((__bridge CFDataRef)xmlData), [xmlData length])) {
         // YOUR PROCESSING HERE
         DuckNode* root = doc.RootNode();
         // Modify, transform, analyze...
 
         // Generate modified XML
         NSData* processedXML = /* your processing result */;
-        xGlobals.outputXML = (CFDataRef)CFRetain((CFDataRef)processedXML);
+        xGlobals.outputXML = (CFDataRef)CFRetain((__bridge CFDataRef)processedXML);
     }
 }
 
 // Update drag to use processed version
 - (NSData*)provideDragData {
-    return (NSData*)xGlobals.outputXML;
+    return (__bridge NSData*)xGlobals.outputXML;
 }
 ```
 
@@ -344,7 +395,7 @@ The drag/drop infrastructure remains unchanged - all modifications go in `receiv
 
 **Required linker flags:**
 ```
--lProExtension
+-weak_framework ProExtension
 -u _ProExtensionMain
 ```
 
@@ -372,9 +423,13 @@ Weakly linked so standalone app can build without them.
 - Add `-u _ProExtensionMain` to Other Linker Flags
 - Extension target only
 
-**"main.cpp: undefined reference"**
-- Verify `main.cpp` is in WEScaffold target only
+**"main.mm: undefined reference"**
+- Verify `main.mm` is in WEScaffold target only
 - Must be excluded from WEScaffoldWE target
+
+**ARC bridging errors**
+- Use `__bridge` for toll-free bridging: `(__bridge NSData*)cfDataRef`
+- Use `(__bridge CFDataRef)` when going the other direction
 
 ### Runtime Errors
 
@@ -393,16 +448,35 @@ Weakly linked so standalone app can build without them.
 - Ensure `provideDragData` returns non-nil
 - Check logs for `[DRAG]` promise fulfillment messages
 
+## Development Conventions
+
+### Code Style
+
+- **Language:** Objective-C++ (`.mm` files) for mixed C++/Objective-C code
+- **Memory:** Use `CFDataRef` with explicit retain/release for educational clarity
+- **Bridging:** Use ARC bridging (`__bridge`) when converting between CF and NS types
+- **Comments:** 60% comment ratio - explain WHY, not just WHAT
+- **Logging:** Use categorized macros (LIFECYCLE_LOG, DROP_LOG, etc.)
+
+### File Naming
+
+- Headers: `WEScaffold*.h`
+- Implementation: `WEScaffold*.mm` (Objective-C++)
+- XIB files match class names
+
+### Build Configuration
+
+- Debug: Full logging, assertions enabled
+- Release: Optimized, reduced logging
+
 ## Documentation
 
 Comprehensive documentation included:
 
-- **XCODE_SETUP_GUIDE.md** - Step-by-step Xcode project creation (450+ lines)
-- **ARCHITECTURE.md** - Deep technical dive into extension lifecycle (730+ lines)
-- **LOGGING.md** - Complete logging guide and log interpretation
-- **README.md** - Quick start and overview
-
-**Total:** ~1,500 lines of educational documentation
+- **XCODE_SETUP_GUIDE.md** - Step-by-step Xcode project reference
+- **doc/ARCHITECTURE.md** - Deep technical dive into extension lifecycle
+- **doc/LOGGING.md** - Complete logging guide and log interpretation
+- **doc/README.md** - Quick start and overview
 
 ## Related Projects in Parent Repository
 
